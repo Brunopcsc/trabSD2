@@ -11,7 +11,7 @@ def nosub(nrosala):
     ctx = zmq.Context.instance()
     porta = 5546+nrosala
     subscriber = ctx.socket(zmq.SUB)
-    url = "tcp://localhost:"+str(porta)
+    url = "tcp://localhost:5558"
     subscriber.connect(url)
 
     subscription = b"%03d" % nrosala

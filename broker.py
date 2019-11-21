@@ -3,7 +3,7 @@ import zmq
 def main():
     ctx = zmq.Context.instance()
     frontend = ctx.socket(zmq.SUB)
-    frontend.connect("tcp://127.0.0.1:5557")
+    frontend.bind("tcp://127.0.0.1:5557")
     backend = ctx.socket(zmq.XPUB)
     backend.bind("tcp://127.0.0.1:5558")
 
